@@ -380,7 +380,7 @@ module RuboCop
         @parser_tokens
       end
 
-      # rubocop:disable Lint/FloatComparison, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
+      # rubocop:disable-next Lint/FloatComparison, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
       def parser_class(ruby_version, parser_engine)
         case parser_engine
         when :parser_whitequark
@@ -447,7 +447,6 @@ module RuboCop
           end
         end
       end
-      # rubocop:enable Lint/FloatComparison, Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
 
       def builder_class(parser_engine)
         case parser_engine
@@ -458,7 +457,7 @@ module RuboCop
         end
       end
 
-      # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+      # rubocop:disable-next Metrics/AbcSize, Metrics/MethodLength
       def create_parser(ruby_version, parser_engine, prism_result)
         builder = builder_class(parser_engine).new
 
@@ -489,7 +488,6 @@ module RuboCop
           end
         end
       end
-      # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
       def normalize_parser_engine(parser_engine, ruby_version)
         parser_engine = parser_engine.to_sym

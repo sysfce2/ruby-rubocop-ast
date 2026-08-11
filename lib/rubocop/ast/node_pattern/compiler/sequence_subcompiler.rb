@@ -29,7 +29,7 @@ module RuboCop
           end
 
           def compile_sequence
-            # rubocop:disable Layout/CommentIndentation
+            # rubocop:disable-next Layout/CommentIndentation
             compiler.with_temp_variables do |cur_child, cur_index, previous_index|
               @cur_child_var = cur_child        # To hold the current child node
               @cur_index_var = cur_index        # To hold the current child index (always >= 0)
@@ -51,7 +51,6 @@ module RuboCop
                                                 # Must be true if `@cur_index` is `:variadic_mode`
               compile_terms
             end
-            # rubocop:enable Layout/CommentIndentation
           end
 
           private

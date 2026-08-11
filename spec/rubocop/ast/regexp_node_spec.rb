@@ -115,9 +115,8 @@ RSpec.describe RuboCop::AST::RegexpNode do
 
   describe '#options' do
     let(:actual_options) { regexp_node.options }
-    # rubocop:disable Security/Eval
+    # rubocop:disable-next Security/Eval
     let(:expected_options) { eval(source).options }
-    # rubocop:enable Security/Eval
 
     context 'with an empty regexp' do
       let(:source) { '//' }

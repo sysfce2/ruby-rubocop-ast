@@ -99,9 +99,8 @@ module RuboCop
 
         def valid_argument_types?
           [first, second].all? do |argument|
-            # rubocop:disable InternalAffairs/NodeTypeMultiplePredicates
+            # rubocop:disable-next InternalAffairs/NodeTypeMultiplePredicates
             argument.pair_type? || argument.kwsplat_type?
-            # rubocop:enable InternalAffairs/NodeTypeMultiplePredicates
           end
         end
 
